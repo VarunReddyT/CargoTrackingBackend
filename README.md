@@ -25,7 +25,7 @@
    ```
 3. Start the server:
    ```sh
-   node index.js
+   npm start
    ```
 4. The API will be running at:
    ```sh
