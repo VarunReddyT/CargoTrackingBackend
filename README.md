@@ -1,4 +1,4 @@
-# Shipment Tracking API
+# Backend - Shipment Tracking
 
 ## Features
 - Retrieve all shipments.
@@ -15,22 +15,23 @@
 ## Installation & Setup
 
 1. Clone the repository:
-   ```sh
-   git clone https://github.com/VarunReddyT/repo
-   cd repo
-   ```
+   
+```sh
+   git clone https://github.com/VarunReddyT/CargoTrackingBackend.git
+   cd CargoTrackingBackend
+```
 2. Install dependencies:
-   ```sh
+```sh
    npm install
-   ```
+```
 3. Start the server:
-   ```sh
+```sh
    npm start
-   ```
+```
 4. The API will be running at:
-   ```sh
+```sh
    http://localhost:4000
-   ```
+```
 
 
 
