@@ -24,12 +24,13 @@ router.get('/shipment/:id', async (req, res) => {
 
 router.post('/shipment/:id/update-location', async (req, res) => {
     const shipmentId = req.params.id;
+    console.log(req.body);
     try{
         const shipment = await Shipment.findOne({shipmentId: shipmentId});
         shipment.currentLocation = req.body.currentLocation;
         shipment.currentETA = req.body.currentETA;
         shipment.trackingHistory.push({
-            location: req.body.currentLocation,
+            location: req.body.currentLocation.location,
             timestamp: req.body.currentETA,
             status: shipment.status
         });
@@ -37,7 +38,7 @@ router.post('/shipment/:id/update-location', async (req, res) => {
         res.status(200).send(shipment);
     }
     catch(err){
-        res.status(404).send('Shipment not found');
+        res.status(404).send(err);
     }
 });
 
