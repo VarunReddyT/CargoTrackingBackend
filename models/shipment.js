@@ -21,7 +21,11 @@ const shipmentSchema = new mongoose.Schema({
         required: true
     },
     currentLocation: {
-        type: String,
+        type : {
+            latitude: String,
+            longitude: String,
+            location: String
+        },
         required: true
     },
     currentETA: {
