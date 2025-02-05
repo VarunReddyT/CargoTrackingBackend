@@ -1,12 +1,4 @@
 # Backend - Shipment Tracking
-
-## Features
-- Retrieve all shipments.
-- Get details of a specific shipment.
-- Update the shipment's current location.
-- Retrieve the estimated time of arrival (ETA).
-- Create a new shipment.
-
 ## Environment Variables (.env)
 
 - `PORT`: 4000
