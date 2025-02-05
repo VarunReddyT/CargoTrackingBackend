@@ -12,8 +12,9 @@ router.get('/shipments', async (req, res) => {
 });
 
 router.get('/shipment/:id', async (req, res) => {
+    const shipmentId = req.params.id;
     try{
-        const shipment = await Shipment.findById(req.params.id);
+        const shipment = await Shipment.findOne({shipmentId: shipmentId});
         res.status(200).send(shipment);
     }
     catch(err){
@@ -22,8 +23,9 @@ router.get('/shipment/:id', async (req, res) => {
 });
 
 router.post('/shipment/:id/update-location', async (req, res) => {
+    const shipmentId = req.params.id;
     try{
-        const shipment = await Shipment.findById(req.params.id);
+        const shipment = await Shipment.findOne({shipmentId: shipmentId});
         shipment.currentLocation = req.body.currentLocation;
         shipment.currentETA = req.body.currentETA;
         shipment.trackingHistory.push({
@@ -40,8 +42,9 @@ router.post('/shipment/:id/update-location', async (req, res) => {
 });
 
 router.get('/shipment/:id/eta', async (req, res) => {
+    const shipmentId = req.params.id;
     try{
-        const shipment = await Shipment.findById(req.params.id);
+        const shipment = await Shipment.findOne({shipmentId: shipmentId});
         res.status(200).send(shipment.currentETA);
     }
     catch(err){
